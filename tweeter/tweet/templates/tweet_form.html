@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+This Page is to do tweet 
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">
+some of tweet , by user on varoius topics </h1>
+
+<h2>{% if form.instance.pk %} Edit tweet {%else%} Create Tweet {% endif %}
+
+    <form method="post" enctype="multipart/form-data" class="form">
+       {% csrf_token %}
+       
+        {{form}}
+
+        <button class="btn btn-warning" type="submit">Submit</button>
+    </form>
+    <a href="{% url 'tweet_list' %}">Back to Tweet List</a>
+</h2>
+{% endblock %}
