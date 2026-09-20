@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Library Books</h1>
+    
+    {% for book in books %}
+    <h2>{{book.title}}</h2>
+    <p>Author: {{book.author}}</p>
+    <p>Price: {{book.price}}</p>
+    <p>Available: {{book.available}}</p>
+    <a href="{% url 'book_detail' book.id %}">Details</a> 
+    <hr>
+    {% endfor %}
+    <a href="{% url 'add_block' %}">Add Book</a>
+</body>
+</html>

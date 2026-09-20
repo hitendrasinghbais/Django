@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+</head>
+<body>
+    
+    {% block blockname %}
+        
+  
+        
+    <h1>Title:- {{book.title}}</h1>
+    <p>Author:- {{book.author}}</p>
+    <p>Price:- {{book.price}}</p>
+    <p>Book:- {{book.available}}</p>
+    
+    {% endblock  %}
+    <a href="{% url 'update_book' book.id %}">Update Book</a>
+    <br><br>
+
+    <a href="{% url 'delete_book' book.id %}">Delete Book</a>
+        <br><br>
+    <a href="{% url 'book_list' %}">Back to Books</a>
+    
+</body>
+</html>
